@@ -1,0 +1,13 @@
+celery==4.4.5
+celery-worker==0.0.6
+kombu==4.6.11
+Flask==2.2.5
+Flask_Admin==1.6.1
+Flask_JSONRPC==2.2.2
+Flask_Login==0.6.2
+flask_sqlalchemy==3.0.5
+PyMySQL==1.1.0
+redis==4.6.0
+SQLAlchemy==2.0.17
+importlib_metadata==4.13.0
+pymysql==1.1.0

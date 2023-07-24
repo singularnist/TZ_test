@@ -1,0 +1,69 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql
+    container_name: my_mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: new_test
+      MYSQL_USER: user_shop
+      MYSQL_PASSWORD: user_shop
+    ports:
+      - "3306:3306"  
+    volumes:
+      - ./Dump.sql:/docker-entrypoint-initdb.d/Dump.sql
+    networks:
+      my_network:
+        ipv4_address: 172.20.0.2
+
+  redis:
+    image: redis
+    container_name: my_redis_container
+    restart: always
+    command: redis-server
+    ports:
+      - "6379:6379"
+    networks:
+      my_network:
+        ipv4_address: 172.20.0.3
+
+  main:
+    image: main
+    container_name: my_main_container
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      my_network:
+        ipv4_address: 172.20.0.4
+
+  celery:
+    image: celery
+    container_name: my_celery_container 
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile_cel
+    depends_on:
+      - mysql
+      - redis
+    environment:
+      - CELERY_BROKER=redis://my_redis_container:6379/0
+    networks:
+      my_network:
+        ipv4_address: 172.20.0.5
+networks:
+  my_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
