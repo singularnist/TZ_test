@@ -1,0 +1,29 @@
+.order-details {
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+}
+.order-details img {
+    width: 300px;
+    height: 300px;
+}
+.detail{
+    margin-left: 40%;
+}
+.order-details img {
+
+    margin-left: 30%;
+}
+#country, #city, #street, #house, #number, #surname, #user_name, #quantity {
+    width: 310px; /* Змініть ширину на ваш вибір */
+}
+select {
+    width: 320px; /* Збільшення ширини списку */
+    padding-right: 20px; /* Збільшення правого відступу для видимості стрілки */
+    }
+    h3{
+        margin-left: 0%;
+    }
+    form{
+        margin-left: 38%;
+    }
