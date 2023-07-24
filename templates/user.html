@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Page</title>
+</head>
+<body>
+    <h1>Ласкаво просимо</h1>
+    <form method="POST">
+        <label for="order_id">Введіть ID замовлення:</label>
+        <input type="text" id="order_id" name="order_id" required>
+        <input type="submit" value="Отримати дані">
+    </form>
+    {% if delivery %}
+        <h2>Дані замовлення:</h2>
+        <p>Кількість: {{ delivery.quantity }}</p>
+        <p>Країна: {{ delivery.country.country }}</p>
+        <p>Місто: {{ delivery.city.city }}</p>
+        <p>Вулиця: {{ delivery.street.street }}</p>
+        <p>Будинок: {{ delivery.house }}</p>
+        <p>Номер: {{ delivery.number }}</p>
+        <p>Прізвище: {{ delivery.surname }}</p>
+        <p>Ім'я: {{ delivery.user_name }}</p>
+        <p>Назва товару: {{ delivery.title }}</p>
+        <p>Колір товару: {{ delivery.color }}</p>
+        <p>Вага товару: {{ delivery.weight }}</p>
+        <p>Ціна: {{ delivery.price }}</p>
+        <p>Статус: {{ delivery.stat }}</p>
+    {% endif %}
+</body>
+</html>

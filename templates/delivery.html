@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Доставка</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/delivery.css">
+</head>
+<body >
+<div class="header">
+    <nav>
+        <ul>
+            <li><a href="/">Каталог</a></li>
+            <li><a href="/profile">Профіль</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="order-details">
+    <div class="detail">
+        <h2>Назва товару: {{article.title}}</h2>
+        <p>Колір: {{article.color}}</p>
+        <p>Вага: {{ article.weight}}</p>
+        <p>Ціна: {{article.price}}</p>
+    </div>
+</div>
+<div class="delivery-address">
+    <form method="post">
+        <p><label for="quantity">Кількість</label></p>
+        <p><input id="quantity" required  name="quantity"></input></p>
+    <h3>Адреса доставки</h3>
+
+        <p><select id="countryCode" name="country" class="form-control">
+            <option value="">Країна...</option>
+            {% for country in countrys %}
+                <option value="{{ country.id }}">{{ country.country }}</option>
+            {% endfor %}
+        </select></p>
+        <p><select id="countryCode" name="city" class="form-control">
+            <option value="">Місто...</option>
+            {% for city in citys %}
+                <option value="{{ city.id }}">{{ city.city }}</option>
+            {% endfor %}
+        </select></p>
+        <p><select id="countryCode" name="street" class="form-control">
+            <option value="">Вулиця...</option>
+            {% for street in streets %}
+                <option value="{{ street.id }}">{{ street.street }}</option>
+            {% endfor %}
+        </select></p>
+        <p><label for="house">Будинок:</label></p>
+        <p><input type="text" required  id="house" name="house"></p>
+        <p><label>Номер телефону</label></p>
+        <p><input type="text" required  id="number" name="number"></p>
+        <p><label>Фамілія</label></p>
+        <p><input type="text" required  id="surname" name="surname"></p>
+        <p><label>Ім'я</label></p>
+        <p><input type="text" required  id="user_name" name="user_name"></p>
+        <button type='submit'>Підтвердити</button>
+    </form>
+</div>
+</body>
+</html>
+<div class="form-group">
+    
+</div>
