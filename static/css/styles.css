@@ -1,0 +1,158 @@
+body {
+    background-image: url('https://phonoteka.org/uploads/posts/2022-02/1643996915_1-phonoteka-org-p-prostie-foni-dlya-artov-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    margin-left: 8%;
+    margin-right: 8%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-image: url('https://phonoteka.org/uploads/posts/2022-02/1643996915_1-phonoteka-org-p-prostie-foni-dlya-artov-1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: black;
+}
+.header ul{
+    margin-left: -20%;
+}
+.header a {
+    size: 10%;
+    text-decoration: none;
+    color: rgb(255, 255, 255); /* Змініть колір на чорний */
+}
+
+.header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.header nav ul li {
+    
+    padding-left: 30px;
+    margin-left: 10px;
+}
+
+.header-text {
+    display: flex;
+    align-items: center;
+}
+.header a {
+    text-decoration: none;
+    font-size: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.header-text h1 {
+    font-size: 32px;
+    color: black;
+    margin: 0;
+}
+
+
+.catalog-container {
+    display: flex;
+}
+
+.catalog {
+    flex-grow: 1;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.product-tile {
+    width: 27%;
+    margin: 1%;
+    background-image: url('https://tipik.ru/wp-content/uploads/2023/03/%D0%9A%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D1%8B%D0%B9-%D1%84%D0%BE%D0%BD-%D0%B4%D0%BB%D1%8F-%D1%8E%D1%82%D1%83%D0%B1-%D0%B0%D0%B2%D0%B0%D1%82%D0%B0%D1%80%D0%BA%D0%B8_001.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    height: 400px; /* Збільшена висота плитки */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product {
+    text-align: center;
+    align-items: center;
+}
+
+.product img {
+    width: 230px;
+    height: 200px;
+  }
+  
+
+.product h3 {
+    color: white;
+    margin-top: 0;
+}
+
+.product p {
+    align-items: center;
+    color: white;
+    margin-bottom: 1px;
+}
+.buy-button {
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    color: #000;
+    margin-left: 0px; /* Зсув вліво на 10 пікселів */
+}
+
+
+
+
+
+
+
+
+
+
+.filters {
+    margin-top: 1%;
+    margin-left: 8%;
+    flex-shrink: 0;
+    width: 250px;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoKbMx-Y18irO3IsNbltOeCHsZUqdm0KqvqbvGstBbj3hzhpEYWP7kxGTTOvJIa6GTW38&usqp=CAU');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+button {
+    margin-left: 10%;
+    border-radius: 10px; /* Закруглені кути */
+    padding: 10px 20px; /* Розмір внутрішнього відступу */
+    font-size: 16px; /* Розмір шрифту */
+}
+
+
+.filters h2 {
+    margin-top: 0;
+    color: beige;
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
+.filter h3 {
+    margin-top: 0;
+    color: beige;
+}
+
+.filter label {
+    display: block;
+    margin-bottom: 5px;
+    color: beige;
+}

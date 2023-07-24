@@ -1,0 +1,62 @@
+.product-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.product-image {
+    margin-right: 20px;
+    margin-left: 5px; /* Поправка: зміщення фото ліворуч */
+}
+
+.product-image img {
+    width: 450px;
+    height: 450px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px; /* Поправка: зміщення тексту праворуч */
+}
+
+.product-info h2 {
+    color: black; /* Поправка: зміна кольору тексту на чорний */
+    font-size: 28px;
+}
+
+.product-info p {
+    color: black; /* Поправка: зміна кольору тексту на чорний */
+    font-size: 22px;
+}
+
+.product-description {
+    margin: 25px;
+    text-align: center;
+}
+
+.product-description h3 {
+    color: black;
+    font-size: 30px;
+}
+
+.product-description p {
+    color: black;
+    font-size: 25px;
+}
+button[type="submit"] {
+    margin-left: 0%;
+    width: 100%;
+    padding: 11px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.register-form button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+}
