@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Авторизація</title>
+</head>
+<body>
+    {% block body %}{% endblock%}
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Зупиняємо стандартну поведінку форми
+    
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+    
+            // Виклик методу login за допомогою JSON-RPC
+            fetch('/api', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    jsonrpc: '2.0',
+                    method: 'login',
+                    params: {
+                        username: username,
+                        password: password
+                    },
+                    id: 1
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === true) {
+                    window.location.href = '/user';  // Перенаправляємо на сторінку користувача
+                } else {
+                    console.log('Неправильний логін або пароль');
+                }
+            })
+            .catch(error => {
+                console.error('Помилка:', error);
+            });
+        });
+        </script>
+</body>
+</html>
