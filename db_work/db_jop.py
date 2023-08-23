@@ -1,23 +1,22 @@
+import os
+
+import pymysql
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from .models import Country, City, Street, Product,Delivery, AdminUser, Base
-import pymysql
+from .models import AdminUser, Base, City, Country, Delivery, Product, Street
 
 pymysql.install_as_MySQLdb()
-user = 'user_shop'
-password = 'user_shop'
-database = 'new_test'
-host = '172.20.0.2'  # IP-адреса контейнера MySQL
-port = '3306'  # Порт MySQL
+load_dotenv()
 
-
-db_url = f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
+db_url = f"mysql+pymysql://{os.getenv('USER_DB')}:{os.getenv('PASS_DB')}@{os.getenv('HOST')}:{os.getenv('PORT')}/{os.getenv('TZ_DB')}"
 
 
 engine = create_engine(db_url)
 
 Session = sessionmaker(bind=engine)
+
 session_1 = Session()
 
 
