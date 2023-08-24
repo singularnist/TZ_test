@@ -1,0 +1,24 @@
+{% extends 'admin/master.html' %}
+
+
+{% block body %}
+ <h1>Я типу адмін панель</h1>
+ <h1>ТУТ ТЕКСТ ЩОБ ПОКАЩАТИ ЩО КАСТОМНІ МОДЕЛІ ТЕЖ МОЖНА ПІДСТАВЛЯТИ</h1>
+ <h3>Вони нічого не роблять просто є 👇</h3>
+    <select id="countryCode" name="country" class="form-control">
+        <option value="">Країна...</option>
+        {% for country in countrys %}
+            <option value="{{ country.id }}">{{ country.country }}</option>
+        {% endfor %}</select>
+    <select id="countryCode" name="city" class="form-control">
+        <option value="">Місто...</option>
+        {% for city in citys %}
+            <option value="{{ city.id }}">{{ city.city }}</option>
+        {% endfor %}</select>
+        <select id="countryCode" name="street" class="form-control">
+            <option value="">Вулиця...</option>
+            {% for street in streets %}
+            <option value="{{ street.id }}">{{ street.street }}</option>
+        {% endfor %}</select>
+  
+{% endblock  body %}
