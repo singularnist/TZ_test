@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Інформація про замовлення</title>
+</head>
+<body>
+    <div style="text-align: center;">
+    <h1>Інформація про замовлення з ID {{ order_details.id }}</h1>
+    {% if order_details.error %}
+        <p>{{ order_details.error }}</p>
+    {% else %}
+        <p>Продукт: {{ order_details.product_name }}</p>
+        <p>Кількість: {{ order_details.quantity }}</p>
+        <p>Країна: {{ order_details.country }}</p>
+        <p>Місто: {{ order_details.city }}</p>
+        <p>Вулиця: {{ order_details.street }}</p>
+        <p>Будинок: {{ order_details.house }}</p>
+        <p>Номер: {{ order_details.number }}</p>
+        <p>Прізвище: {{ order_details.surname }}</p>
+        <p>Ім'я: {{ order_details.user_name }}</p>
+        <p>Статус: {{ order_details.status }}</p>
+        <p>Дата: {{ order_details.date }}</p>
+    {% endif %}
+</div>
+</body>
+</html>
+
