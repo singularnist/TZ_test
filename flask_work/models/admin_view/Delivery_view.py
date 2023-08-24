@@ -48,19 +48,12 @@ class AddressModelView(ModelView):
 
     def on_model_change(self, form, model, is_created):
         super(AddressModelView, self).on_model_change(form, model, is_created)
-
         if is_created:
-            # Якщо запис створюється, виводимо повідомлення
             message = f"Створено замовлення id {model.id}, статус {model.stat}"
-            print(message)
-
-
-    def on_model_delete(self, model):
-
-        super(AddressModelView, self).on_model_delete(model)
-        message = f"Замовлення id {model.id} видалено"
+        else:
+            message = f"Замовлення id {model.id} змінило статус на {model.stat}"
         print(message)
-    
+
     
 class TestView(BaseView):
     @expose('/')
